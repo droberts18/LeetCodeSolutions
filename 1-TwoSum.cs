@@ -1,4 +1,5 @@
-// Runtime: O(n), 264ms
+// Time Complexity: O(n)
+// Runtime: 264ms
 // Memory: 29.2 MB
 
 public class Solution {
@@ -18,7 +19,8 @@ public class Solution {
     }
 }
 
-// Runtime: O(n^2), 392ms
+// Time Complexity: O(n^2)
+// Runtime: 392ms
 // Memory: 28.8 MB
 
 public class Solution {
