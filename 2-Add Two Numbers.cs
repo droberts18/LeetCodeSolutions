@@ -10,6 +10,10 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 */
 
+// Time complexity: O(max(m,n)), where m and n are the size of each linked lists respectively
+// Runtime: 116ms
+// Memory: 25.5 MB
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -27,15 +31,30 @@ public class Solution {
         int carry = 0;
 
         while(currL1 != null || currL2 != null){
-            int val1 = currL1.val;
-            int val2 = currL2.val;
+            int val1 = 0;
+            int val2 = 0;
+
+            if(currL1 != null){
+                val1 = currL1.val;
+            }
+            if(currL2 != null){
+                val2 = currL2.val;
+            }
 
             int sum = val1 + val2 + carry;
             carry = sum / 10;
 
             currAns.next = new ListNode(sum % 10);
-            currL1 = currL1.next;
-            currL2 = currL2.next;
+
+            if(currL1 != null){
+                currL1 = currL1.next;
+            }
+
+            if(currL2 != null){
+                currL2 = currL2.next;
+            }
+
+            currAns = currAns.next;
         }
 
         // Accounting for a situation in which a new place value needs to be added
